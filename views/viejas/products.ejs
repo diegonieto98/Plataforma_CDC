@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lista de productos</title>
+	<link rel="Stylesheet" href="css/main.css" type="text/css">
+</script>
+</head>
+<body style="margin-left: 100px;">
+	<h1>Lista de todos los productos</h1>
+	<ul style="color: black;">
+		<% for (var i = 0 ; i <product.length; i++) {%>
+			<li> 
+				id = <%= product[i].id %><br>
+				name = <%= product[i].name %><br><br>
+			</li>
+		<% } %>
+	</ul>
+	<h3><a href="http://localhost:3000/" class="nave-link" >Regresar a Inicio</a></h3>
+</body>
+</html>

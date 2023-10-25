@@ -1,0 +1,20 @@
+[
+  {
+    "usuario": "diego98",
+    "contraseña": "12345",
+    "rol": "admin",
+    "IDUSR": 1
+  },
+  {
+    "usuario": "aquiles58",
+    "contraseña": "123123",
+    "rol": "invitado",
+    "IDUSR": 2
+  },
+  {
+    "usuario": "carnes17",
+    "contraseña": "carnes23",
+    "rol": "cliente",
+    "IDUSR": 3
+  }
+]

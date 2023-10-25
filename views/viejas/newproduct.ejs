@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar nuevo producto</title>
+    <link rel="Stylesheet" href="css/main.css" type="text/css">
+</head>
+<body style="text-align: center">
+    <h1>
+        Agregar nuevo producto
+    </h1>
+    <form action="./newproduct/newp" method="POST">
+        Ingresar el nombre del nuevo producto = <input type="text" name="newname" id="newname"><br>
+        <button>Agregar producto</button><br><br>
+        <a href="http://localhost:3000/" class="nave-link" >Regresar a Inicio</a></h3>
+    </form>
+    <script>
+        const newname = document.getElementById('newname');
+        console.log(newname);
+        newname.name.focus();
+    </script>
+</body>
+</html>

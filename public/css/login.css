@@ -1,0 +1,97 @@
+body {
+    background-image: url("draw/fondo-login.png");
+    background-size: cover;
+    margin: 0 auto;
+    padding-top: 10%;
+}
+.bienvenido
+{   
+    position: relative;
+    top: 40px;
+    margin: 0 auto;
+    color:#000000;
+    text-align:center;
+    vertical-align:text-middle;
+    font-size:32px;
+    font-family:Nunito;
+    line-height:auto;
+    border-style:hidden;
+    outline:none;
+    width:168px;
+}
+.Campo_login
+{   
+    margin: 0 auto;
+    background-color:#ffffff;
+    height:437px;
+    width:301px;
+    flex-shrink: 0;
+    filter:drop-shadow(0px 30px 138px rgba(0,0,0,0.30000001192092896));
+    border-radius:50px;
+}
+.text_entry_login
+{   
+    margin: 5% auto;
+    position: relative;
+    width:175px;
+    height:20px;
+    top: 70px;
+    left: 60px;
+    background-color:#d9d9d9;
+    border-radius:9px;
+    border:5px solid #6c6969;
+    color:#0e0d0d;
+    text-align:center;
+    font-size:18px;
+    font-family:Nunito;
+    border-style:hidden;
+}
+.linea_login
+{
+    position: relative;
+    margin: 0 auto;
+    top: 75px;
+    width:170px;
+    border:4px solid #45a7cf;
+
+}
+.Check_recordarme
+{
+    margin: 0 auto;
+    position: relative;
+    top: 80px;
+    left: 100px;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    border-radius: 18px;
+    border: 3px solid #45A7CF;
+    background: #FFF;
+    background-color:#ffffff;
+}
+.ingresar
+{   
+    margin: 30%;
+    position: relative;
+    width: 97px;
+    height: 24px;
+    left: 9px;
+    color:#ffffff;
+    text-align:center;
+    border-radius: 9px;
+    background: #45A7CF;
+    font-size:16px;
+    font-family:Nunito;
+    border-style:hidden;
+    
+}
+.imagen_tecforce
+{
+    margin: 50% auto;
+    position: absolute;
+    left: 25%;
+    height:50px;
+    width:147px;
+    background-image: url('draw/Logo-Tecforce-Vectorizado-lindares.png');
+    border-image-width: 0;
+}

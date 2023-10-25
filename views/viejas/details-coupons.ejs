@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles de los cupones</title>
+    <link rel="Stylesheet" href="css/main.css" type="text/css">
+</head>
+<body>
+    <h1 style="text-align: center;">Buscar el bono por medio del product_ID</h1>
+
+    <form style="text-align: center" action="./details-coupons/findcoupon" method="POST">
+        <br><br>Ingrese la ID del product_ID: <input type="text" name="productid1" id="productid1">
+        <button> Buscar bono </button><br><br><br>
+    </form>
+    <script>
+        const productid1 = document.getElementById('productid1');
+        productid1.focus();
+    </script>
+    <p style="text-align: center">
+            Abajo aparece la descripcion del bono que esta buscando
+    </p> 
+    <ul>
+        <% for (var i = 0 ; i < indicesC.length; i++) {%>
+		<li> 
+				id = <%= coupon[indicesC[i]].id %><br>
+				name = <%= coupon[indicesC[i]].name %><br>
+				description = <%= coupon[indicesC[i]].description %><br>
+				product_id = <%= coupon[indicesC[i]].product_id %><br>
+				valid_since = <%= coupon[indicesC[i]].valid_since %><br>
+				valid_until = <%= coupon[indicesC[i]].valid_until %><br><br>
+		</li>
+        <% } %>
+    </ul>
+    <br><h3 style="text-align: center"><a href="http://localhost:3000/index" class="nave-link" >Regresar a Inicio</a></h3>
+</body>
+</html>

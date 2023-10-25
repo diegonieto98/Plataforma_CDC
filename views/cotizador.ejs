@@ -1,0 +1,537 @@
+<%- include ('layouts/cabecera.ejs') %>
+    <script>
+
+        const Totales = (tableresumen, indice) => {
+            var precioTotal = 0;
+            var cantidad = 0;
+            var costoCarne = 0;
+            var costoTotal = 0;
+            var utilidadTotal =0;
+            var utilidad = 0;
+            var margen = 0;
+            var margenTotal = 0;
+            var descuentoTotal = 0;
+
+            rowscount = tableresumen.rows.length;
+            //console.log(rowscount);
+            
+            for (i=1; i < rowscount - indice; i++ ){
+
+                precioTotal = Number(String(tableresumen.rows[i].cells[13].innerHTML).replace(/[^\d.]/g,"")) + precioTotal;
+                cantidad = Number(String(tableresumen.rows[i].cells[4].innerHTML));
+                descuentoTotal = Number(String(tableresumen.rows[i].cells[3].innerHTML).replace(/[^\d.]/g,""))*cantidad + descuentoTotal;
+                //console.log(cantidad)
+                costoCarne = Number(String(tableresumen.rows[i].cells[7].innerHTML).replace(/[^\d.]/g,"")) + costoCarne;
+                costoTotal = Number(String(tableresumen.rows[i].cells[8].innerHTML).replace(/[^\d.]/g,"")) + costoTotal;
+                //console.log(costoTotal)
+                utilidad = Number(String(tableresumen.rows[i].cells[9].innerHTML).replace(/[^\d.]/g,"")) + utilidad;
+                margen = Number(String(tableresumen.rows[i].cells[10].innerHTML).replace(",",".")) + margen;
+                utilidadTotal = Number(String(tableresumen.rows[i].cells[11].innerHTML).replace(/[^\d.]/g,"")) + utilidadTotal;
+                margenTotal = Number(String(tableresumen.rows[i].cells[12].innerHTML).replace(",",".")) + margenTotal;
+            };
+
+            //console.log(((precioTotal - costoTotal)/precioTotal)*100)
+            descuentoTotal = descuentoTotal - precioTotal;
+            if (descuentoTotal < 1){
+                descuentoTotal = 0;
+            };
+        
+            tableresumen.rows[rowscount - indice].cells[5].innerHTML = (((precioTotal - costoCarne)/precioTotal)*100).toFixed(2);
+            tableresumen.rows[rowscount - indice].cells[7].innerHTML = (((precioTotal - costoTotal)/precioTotal)*100).toFixed(2);
+            
+            descuentoTotal = descuentoTotal.toLocaleString("en", {
+	            style: "currency",
+	            currency: "USD",
+            }); 
+            precioTotal = precioTotal.toLocaleString("en", {
+	            style: "currency",
+	            currency: "USD",
+            }); 
+            costoTotal = costoTotal.toLocaleString("en", {
+	            style: "currency",
+	            currency: "USD",
+            });
+            utilidad = utilidad.toLocaleString("en", {
+	            style: "currency",
+	            currency: "USD",
+            });
+            utilidadTotal = utilidadTotal.toLocaleString("en", {
+	            style: "currency",
+	            currency: "USD",
+            });
+            costoCarne = costoCarne.toLocaleString("en", {
+	            style: "currency",
+	            currency: "USD",
+            });
+
+            tableresumen.rows[rowscount - indice].cells[1].innerHTML = descuentoTotal;
+            tableresumen.rows[rowscount - indice].cells[2].innerHTML = costoCarne;
+            tableresumen.rows[rowscount - indice].cells[3].innerHTML = costoTotal;
+            tableresumen.rows[rowscount - indice].cells[4].innerHTML = utilidad;
+            tableresumen.rows[rowscount - indice].cells[6].innerHTML = utilidadTotal;
+            console.log(precioTotal)
+            tableresumen.rows[rowscount - indice].cells[8].innerHTML = precioTotal;
+        }
+
+        const agregarFila = () => {
+            var table = document.getElementById('tabla-producto-nuevo');
+            var tableresumen = document.getElementById('tabla-resumen-productos')
+
+            let newTransactionRowRef = tableresumen.insertRow(1);
+            newTransactionRowRef.innerHTML = table.rows[1].innerHTML;
+
+            let newDeleteCell = newTransactionRowRef.insertCell(14);
+            let deleteButton = document.createElement("button");
+            deleteButton.textContent = "Eliminar";
+            deleteButton.style = "background-color: red";
+            newDeleteCell.appendChild(deleteButton);
+
+            Totales(tableresumen, 1);
+
+            deleteButton.addEventListener("click", (event) => {
+                console.log(event.target.parentNode.parentNode);
+                console.log(event);
+                event.target.parentNode.parentNode.remove();
+                
+                Totales(tableresumen, 1)
+            });
+
+        };
+
+        const eliminarFila = () => {
+            var tableresumen = document.getElementById('tabla-resumen-productos');
+            var rowCount = tableresumen.rows.length;
+
+            if (rowCount <= 2){
+                alert('No se puede eliminar el encabezado');
+            }
+            else{
+                tableresumen.deleteRow(rowCount -2);
+                Totales(tableresumen, 1);
+            };
+            
+        };
+
+        const limpiarproductos = () => {
+            var tableresumen = document.getElementById('tabla-resumen-productos');
+            var rowCount = tableresumen.rows.length;
+            
+            for (i=2; i < rowCount ; i++ ){
+                tableresumen.deleteRow(rowCount - i);
+            };
+
+            Totales(tableresumen, 1);
+
+        };
+
+        const buscarproducto = () =>{
+
+            let data ='<%- JSON.stringify(productoscarnes)%>';
+            data = JSON.parse(data);
+
+            const tableNuevo = document.getElementById("tabla-producto-nuevo");
+            const tableVariables = document.getElementById('tabla-variables-producto');
+            const tablebuscar= document.getElementById("tabla-buscar-producto");
+            
+            var costoposta = 371;
+            var costoempaque = 350;
+            var costototal = 2208;
+            var preciodescuento = 0;
+            var preciototal = 0;
+            var utilidad = 0;
+            var utilidadtotal = 0;
+            var margen = 0;
+            var margentotal = 0;
+
+            var productoselect =  document.getElementById("productoselect");
+            var idseleccion = Number(productoselect.value) - 1;
+
+            var producto = data[idseleccion].Productos;
+            var precio = Number(data[idseleccion].Precio);
+            var codigoproducto = data[idseleccion].Codigo;
+            var costocarne = Number(data[idseleccion].Costo);
+            var Linea = data[idseleccion].Línea;
+
+            var poste = document.getElementById("poste").value;
+            var cantidad = document.getElementById("Cantidad").value;
+            var descuento = document.getElementById("Descuento").value;
+            var sacrificio = document.getElementById("coste-sacrificio").value;
+            var costeposte = document.getElementById("coste-poste").value;
+            var eficiencia = document.getElementById("eficiencia").value;
+
+            if (eficiencia.length == 0){
+                eficiencia = 0;
+            }
+            else{
+                costocarne = costocarne *(1 + (eficiencia/100));
+            };
+            
+            if (descuento.length == 0){
+                descuento = 0;
+            }
+
+            if (costeposte == "si"){
+                switch (poste){
+                    case "base1kg":
+                        costototal =  (costoposta*1) + (costoempaque*1) +costototal;
+                        break;
+                    
+                    case "base1lb":
+                        costototal =  (costoposta*2)  + (costoempaque*2) + costototal;
+                        break;
+
+                    case "base350gr":
+                        costototal = (costoposta*3) + (costoempaque*2) + costototal;
+                        break;
+                    
+                    case "bloque":
+                        costototal = (costoposta*0) + (costoempaque*2) + costototal;
+                        break;
+                };
+            };
+
+            if (sacrificio == "si"){
+                costototal = 1088 + costototal;
+            };
+
+
+            preciodescuento = precio - ((precio/100)*descuento);
+            costototal = costocarne + costototal;
+            preciototal = preciodescuento*cantidad;
+
+            utilidad = (preciodescuento - costocarne)*cantidad;
+            margen = parseFloat((utilidad/preciototal)*100).toFixed(2);
+
+            utilidadtotal = (preciodescuento - costototal)*cantidad;
+            margentotal = parseFloat((utilidadtotal/preciototal)*100).toFixed(2);
+
+            costocarne = costocarne*cantidad;
+            costototal = costototal*cantidad;
+
+            precio = precio.toLocaleString("en", {
+	            style: "currency",
+	            currency: "USD",
+            });
+            preciodescuento = preciodescuento.toLocaleString("en", {
+	            style: "currency",
+	            currency: "USD",
+            });
+            costocarne = costocarne.toLocaleString("en", {
+	            style: "currency",
+	            currency: "USD",
+            });
+            costototal = costototal.toLocaleString("en", {
+	            style: "currency",
+	            currency: "USD",
+            });
+            utilidad = utilidad.toLocaleString("en", {
+	            style: "currency",
+	            currency: "USD",
+            });
+            utilidadtotal = utilidadtotal.toLocaleString("en", {
+	            style: "currency",
+	            currency: "USD",
+            });
+            preciototal = preciototal.toLocaleString("en", {
+	            style: "currency",
+	            currency: "USD",
+            });
+
+            tableNuevo.rows[1].innerHTML = "<td>"+codigoproducto+"</td><td>"+Linea+"</td><td>"+producto+"</td><td>"+precio+"</td><td>"+cantidad+"</td><td>"+
+                descuento+"</td><td>"+preciodescuento+"</td><td>"+costocarne+"</td><td>"+costototal+"</td><td>"+utilidad+"</td><td>"+
+                margen+"</td><td>"+utilidadtotal+"</td><td>"+margentotal+"</td><td>"+preciototal+"</td>";
+            
+            tablebuscar.rows[1].cells[0].innerHTML = codigoproducto;
+        };
+        
+        const generarPDF = () =>{
+            var tableresumen = document.getElementById("tabla-resumen-productos");
+            var productosCotizados = [];
+            var rowCount = tableresumen.rows.length;
+            var Total;
+            var TotalDescuento;
+            
+            for (i=1; i < rowCount - 1 ; i++ ){
+                var temp = [
+                    tableresumen.rows[i].cells[0].innerHTML,
+                    tableresumen.rows[i].cells[1].innerHTML,
+                    tableresumen.rows[i].cells[2].innerHTML,
+                    tableresumen.rows[i].cells[3].innerHTML,
+                    tableresumen.rows[i].cells[4].innerHTML,
+                    tableresumen.rows[i].cells[5].innerHTML,
+                    tableresumen.rows[i].cells[13].innerHTML,
+                ];
+                productosCotizados.push(temp);
+            };
+
+            //Fila de total
+            TotalDescuento = tableresumen.rows[rowCount -1].cells[1].innerHTML;
+            temp =["","","","","","DESCUENTO",TotalDescuento];
+            productosCotizados.push(temp);
+            Total = tableresumen.rows[rowCount -1].cells[8].innerHTML;
+            temp =["","","","","","TOTAL",Total];
+            productosCotizados.push(temp);
+
+            //variables del formulario    
+            var cotizacion_a = document.getElementById("cotizaciona").value;
+            var comercial = document.getElementById("comercial").value;
+            var fecha_cotizacion = document.getElementById("fecha_cotizacion").value;
+            var fecha_plazo = document.getElementById("fecha_plazo").value;
+            var numeroCel = document.getElementById("NumeroCelular").value;
+            var correo = String(document.getElementById("correo").value);
+            var diasPlazo = document.getElementById("diasPlazo").value;
+            var formaPago = document.getElementById("formaPago").value;
+
+            //Crear PDF
+            const doc = new jsPDF();
+            var columns = ["COD", "Linea", "Producto", "Precio Unitario", "Cantidad", "% Descuento", "TOTAL"];
+            doc.autoTable(columns,productosCotizados,
+                { margin:{ top: 90 }, align: 'center'}
+            );
+
+            var imgHeader = new Image();
+            imgHeader.src = 'css/draw/CDC/cotizador/header_cotizacion.png';
+            doc.addImage(imgHeader, 'PNG', 5, 5,200, 35);
+
+            var imgfooter = new Image();
+            imgfooter.src = 'css/draw/CDC/cotizador/footer_cotizacion.png';
+            imgfooter.onload = () => {
+                doc.addImage(imgfooter, 'PNG', 5, 250,200, 35);
+                doc.setFont("arial", "bold");
+                doc.setFontSize(11);
+                doc.setLineWidth(0.4); 
+                
+
+                //cargue de datos de comercial
+                doc.text("Proveedor: CDC CARNES DE COLOMBIA SAS", 20, 50);
+                doc.line(40, 51, 105, 51);
+                doc.text("NIT: 900.779.890-7 ", 20, 55);
+                doc.line(28, 56, 105, 56);
+                doc.text("Dirección: CRA 20 No 166-37 ", 20, 60);
+                doc.line(40, 61, 105, 61);
+                doc.text("Comercial: "+comercial, 20, 65);
+                doc.line(40, 66, 105, 66);
+                doc.text("E-mail: "+correo, 20, 70);
+                doc.line(32, 71, 105, 71);
+                doc.text("Fecha: "+fecha_cotizacion, 120, 50);
+                doc.line(132, 51, 180, 51);
+                doc.text("vigencia Cotización: "+fecha_plazo, 120, 55);
+                doc.line(160, 56, 180, 56);
+                doc.text("Forma de pago: "+formaPago, 120, 60);
+                doc.line(150, 61, 180, 61);
+                doc.text("Dias plazo: "+diasPlazo, 120, 65);
+                doc.line(142, 66, 180, 66);
+                doc.text("Numero Celular: "+numeroCel, 120, 70);
+                doc.line(152, 71, 180, 71);
+
+                doc.text("Productos Cotizados a: "+cotizacion_a, 60, 80);
+
+                // guardar el documento
+                doc.save("Cotización_"+cotizacion_a+"_"+'<%=newSince%>'+".pdf");
+            };
+            
+        };
+
+        const configuracion = () =>{
+            alert("Si se llama Aquiles no puede acceder a esta funcion");
+            alert("y como sabemos que se llama Aquiles ? Porque es el unico que molesta con esta funcion");
+            alert("Entonces chao pescado");
+        };
+
+    </script>
+
+    <form class="col-auto">
+        <table id="campos_entrada" class="campos_entrada">
+            <tr style="font-size: 30px; text-align: center;">
+                <th colspan="2">Datos Comercial</th>
+                <th colspan="2">Datos Cotización</th>
+
+            </tr>
+            <tr class="mb-1">
+                <td>
+                    <label class="form-label">Cotización a:</label>
+                </td>
+                <td>
+                    <input type="text" class="form-control-sm" id="cotizaciona">
+                </td>
+                <td>
+                    <label class="form-label">Fecha:</label>
+                </td>
+                <td>
+                    <input type="text" class="form-control-sm" id="fecha_cotizacion" value="<%= newSince %>">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="form-label">Comercial:</label>
+                </td>
+                <td>
+                    <input type="text" class="form-control-sm" id="comercial">
+                </td>
+                <td>
+                    <label class="form-label">Vigencia Cotización:</label>
+                </td>
+                <td>
+                    <input type="text" class="form-control-sm" id="fecha_plazo" value="<%= newUntil %>">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="form-label" >Numero de celular:</label>
+                </td>
+                <td>
+                    <input type="text" class="form-control-sm" id="NumeroCelular">
+                </td>
+                <td>
+                    <label class="form-label" >forma de pago:</label>
+                </td>
+                <td>
+                    <input type="text" class="form-control-sm" id="formaPago">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="form-label" >E-MAIL:</label>
+                </td>
+                <td>
+                    <input type="email" class="form-control-sm" id="correo">
+                </td>
+                <td>
+                    <label class="form-label" >Días de plazo:</label>
+                </td>
+                <td>
+                    <input type="text" class="form-control-sm" id="diasPlazo">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <div id="botones" class="botones">
+        <a id="boton_mas" class="boton_mas" type="button" onclick="agregarFila()"></a>
+        <a id="boton_menos" class="boton_menos" type="button" onclick="eliminarFila()"></a>
+        <a id="boton_limpiar" class="boton_limpiar" type="button" onclick="limpiarproductos()"></a>
+        <a id="boton_pdf" class="boton_pdf" type="button" onclick="generarPDF()"></a>
+        <a id="boton_configuracion" class="boton_configuracion" type="button" onclick="configuracion()"></a>
+    </div>
+
+    <table id="tabla-buscar-producto" class="tabla-buscar-producto" onchange="buscarproducto()">
+        <tr>
+            <th style="width: 80px;">COD</th>
+            <th style="width: 200px;">PRODUCTO</th>
+            <th style="width: 100px;">CANTIDAD</th>
+            <th style="width: 120px;">% DESCUENTO</th>
+        </tr>
+        <tr>
+            <td id="codigoproducto" >####</td>
+            <td>
+                    <select name="productoselect" id="productoselect" class="form-select">
+                        <% for (var i = 0 ; i < productoscarnes.length; i++) {%>
+                            <option value="<%= productoscarnes[i].IDPRD %>"><%= productoscarnes[i].Productos %></option>
+                        <% } %>
+                    </select>
+            </td>
+            <td><input class="form-control" id="Cantidad" placeholder="0" type="number"></td>
+            <td><input type="number" class="form-control" id="Descuento" placeholder="0.0%"></td>
+            <td><a id="boton_buscar" class="boton_buscar" type="button" value="Productobuscar" onclick="buscarproducto()"></a></td>
+        </tr>
+    </table>
+
+    <table id="tabla-producto-nuevo" class="tabla-producto-nuevo" border=2>
+        <tr style="font-size: 12px;" border=2>
+            <th style="width: 50px;">COD</th>
+            <th style="width: 60px;">LINEA</th>
+            <th style="width: 150px;">PRODUCTO</th>
+            <th style="width: 100px;">PRECIO</th>
+            <th style="width: 100px;">CANTIDAD</th>
+            <th style="width: 100px;">% DESCUENTO</th>
+            <th style="width: 100px;">PRECIO DESC.</th>
+            <th style="width: 100px;">COSTO CARNE</th>
+            <th style="width: 100px;">COSTO TOTAL</th>
+            <th style="width: 100px;">UTILIDAD $</th>
+            <th style="width: 100px;">MARGEN %</th>
+            <th style="width: 100px;">UTILIDAD_T $</th>
+            <th style="width: 100px;">MARGEN_T %</th>
+            <th style="width: 120px;">PRECIO TOTAL</th>
+        </tr>
+        <tr style="font-size: 14px;">
+            <td>####</td>
+            <td>####</td>
+            <td>############</td>
+            <td>$0.0</td>
+            <td>0</td>
+            <td>0.0</td>
+            <td>$0.0</td>
+            <td>$0.0</td>
+            <td>$0.0</td>
+            <td>$0.0</td>
+            <td>0.0</td>
+            <td>$0.0</td>
+            <td>0.0</td>
+            <td>$0.0</td>
+        </tr>
+    </table>
+
+    <table id="tabla-variables-producto" class="tabla-variables-producto" onchange="buscarproducto()">
+        <tr>
+            <th style="width: 170px;">Poste</th>
+            <th style="width: 150px;">Costo Sacrificio</th>
+            <th style="width: 150px;">Costo Posta</th>
+            <th style="width: 150px;">Eficiencia</th>
+        </tr>
+        <tr>
+            <td>
+                <select name="poste" id="poste" class="form-select">
+                    <option value="base1kg">Costo base 1 Kg</option>
+                    <option value="base1lb">Por 1 Lb</option>
+                    <option value="base350gr">Por 350 gr</option>
+                    <option value="bloque">En posta (bloque)</option>
+                </select>
+            </td>
+            <td>
+                <select name="costo-sacrificio" id="coste-sacrificio" class="form-select">
+                    <option value="si">SI</option>
+                    <option value="no">NO</option>
+                </select>
+            </td>
+            <td>
+                <select name="costo-sacrificio" id="coste-poste" class="form-select">
+                    <option value="si">SI</option>
+                    <option value="no">NO</option>
+                </select>
+            </td>
+            <td><input type="text" class="form-control" placeholder="0.0%" id="eficiencia"></td>
+
+        </tr>
+    </table>
+
+    <table id="tabla-resumen-productos" class="tabla-resumen-productos" border=2>
+        <tr style="font-size: 12px;" border=2>
+            <th style="width: 30px;">COD</th>
+            <th style="width: 40px;">LINEA</th>
+            <th style="width: 150px;">PRODUCTO</th>
+            <th style="width: 80px;">PRECIO</th>
+            <th style="width: 60px;">CANTIDAD</th>
+            <th style="width: 100px;">% DESCUENTO</th>
+            <th style="width: 100px;">PRECIO DESC.</th>
+            <th style="width: 130px;">COSTO CARNE</th>
+            <th style="width: 130px;">COSTO TOTAL</th>
+            <th style="width: 130px;">UTILIDAD $</th>
+            <th style="width: 80px;">MARGEN %</th>
+            <th style="width: 130px;">UTILIDAD_T $</th>
+            <th style="width: 80px;">MARGEN_T %</th>
+            <th style="width: 180px;">PRECIO TOTAL</th>
+        </tr>
+        <tr border=2>
+            <td colspan="6" style="text-align: right;"><b>TOTAL</b></td>
+            <td>$0.0</td>
+            <td>$0.0</td>
+            <td>$0.0</td>
+            <td>$0.0</td>
+            <td>0.0</td>
+            <td>$0.0</td>
+            <td>0.0</td>
+            <td>$0.0</td>
+        </tr>
+    </table>
+
+<%- include ('layouts/pie.ejs') %>

@@ -1,0 +1,112 @@
+body
+{
+    background-image: url("draw/CDC/cotizador/Cotizacionhorizontal-cotizador.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+}
+.campos_entrada
+{
+    width: 700px;
+    margin: 0 auto;
+    margin-left: 24%;
+    color:#F0E51C;
+    font-size: 15px;
+}
+.botones
+{
+    position: absolute;
+    margin: 0 auto;
+    top: 295px;
+    left: 80%;
+}
+.boton_mas
+{
+    background-image: url("draw/CDC/cotizador/mas.png");
+    background-size: cover;
+    height:40px;
+    width:40px;
+    position:absolute;
+
+}
+.boton_menos
+{
+    background-image: url("draw/CDC/cotizador/menos.png");
+    background-size: cover;
+    height:40px;
+    width:40px;
+    position:absolute;
+    left: 50px;
+}
+.boton_limpiar
+{
+    background-image: url("draw/CDC/cotizador/limpiar.png");
+    background-size: cover;
+    height:40px;
+    width:40px;
+    position:absolute;
+    left: 120px;
+}
+.boton_pdf
+{
+    background-image: url("draw/CDC/cotizador/pdf.png");
+    background-size: cover;
+    height:40px;
+    width:40px;
+    position:absolute;
+    left: 170px;
+}
+.boton_configuracion
+{
+    background-image: url("draw/CDC/cotizador/configuracion.png");
+    background-size: cover;
+    height:40px;
+    width:40px;
+    position:absolute;
+    left: 220px;
+}
+.boton_buscar
+{
+    background-image: url("draw/CDC/cotizador/buscar.png");
+    background-size: cover;
+    height:40px;
+    width:40px;
+    position: absolute;
+    top: 26px;
+}
+.tabla-producto-nuevo
+{
+    position: absolute;
+    top: 350px;
+    left: 50px;
+    color:#F0E51C;
+    border-color: #F0E51C;
+    text-align: center;
+}
+.tabla-buscar-producto
+{
+    position: absolute;
+    top: 270px;
+    left: 10px;
+    color:#F0E51C;
+    border-color: #F0E51C;
+    text-align: center;
+}
+.tabla-variables-producto
+{
+    position: absolute;
+    top: 270px;
+    left: 580px;
+    color:#F0E51C;
+    border-color: #F0E51C;
+    text-align: center;
+}
+.tabla-resumen-productos
+{
+    position: absolute;
+    top: 450px;
+    left: 20px;
+    color:#F0E51C;
+    border-color: #F0E51C;
+    text-align: center;
+}

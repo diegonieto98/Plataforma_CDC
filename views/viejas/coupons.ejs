@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lista de cupones</title>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body style="margin-left: 50px;">
+	<h3>Lista de cupones disponibles</h3>
+	<ul style="color: black;">
+		<% for (var i = 0 ; i <coupon.length; i++) {%>
+			<li> 
+				id = <%= coupon[i].id %><br>
+				name = <%= coupon[i].name %><br>
+				description = <%= coupon[i].description %><br>
+				product_id = <%= coupon[i].product_id %><br>
+				valid_since = <%= coupon[i].valid_since %><br>
+				valid_until = <%= coupon[i].valid_until %><br><br>
+			</li>
+		<% } %>
+	</ul>
+	<h3 style="text-align: center"><a href="http://localhost:3000/" class="nave-link" >Regresar a Inicio</a></h3>
+</body>
+</html>

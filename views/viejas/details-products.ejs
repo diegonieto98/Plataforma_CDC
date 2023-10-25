@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de los productos</title>
+    <link rel="Stylesheet" href="css/main.css" type="text/css">
+</head>
+<body>
+    <h1 style="text-align: center;">Buscar el producto por medio del ID</h1>
+
+    <form style="text-align: center;" action="./details-products/findproduct" method="POST">
+        <br><br>Ingrese la ID del producto: <input type="text" name="productid2" id="productid2">
+        <button> Buscar producto </button><br><br><br>
+    </form>
+    <script>
+        const productid2 = document.getElementById('productid2');
+        product.id.focus();
+    </script>
+    <p style="text-align: center">
+        Abajo aparece la descripcion del producto que esta buscando
+    </p> 
+    <ul style="color: black; text-align: center">
+		id = <%= product[ indicesP].id %><br>
+		name = <%= product[ indicesP ].name %><br>
+    </ul>
+    <br><h3 style="text-align: center"><a href="http://localhost:3000/" class="nave-link" >Regresar a Inicio</a></h3>
+</body>
+</html>

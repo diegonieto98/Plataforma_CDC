@@ -1,0 +1,12 @@
+.logo
+{
+    background-image: url("draw/CDC/Logo-CDC-circulo-negro.png");
+    background-size: cover;
+    width: 20;
+    height: 20;
+}
+.comercial
+{
+    background-image: url("draw/Cabecera/icono-comercial.png");
+    background-size: cover;
+}

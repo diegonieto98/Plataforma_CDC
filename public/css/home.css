@@ -1,0 +1,144 @@
+body {
+    background-image: url("draw/Home/fondo-home.png");
+    background-size: cover;
+    margin: auto;
+    font-family: Nunito;
+    font-size: 20px;
+}
+.line1
+{
+    position: absolute;
+    width:1011px;
+    border:5px solid #45a7cf;
+    top: 200px;
+}
+.cerrarsesión
+{
+    color:#000000;
+    text-align:center;
+    font-size:15px;
+    font-family:Nunito;
+    line-height:auto;
+    border-style:hidden;
+    outline:none;
+    position: absolute;
+    width:88px;
+    left: 92%;
+}
+.imagen-home1
+{
+    background-image: url("draw/Home/imagen-home-1.png");
+    width: 586px;
+    height: 328px;
+    left:580px;
+    top:90px;
+    background-size: cover;
+    position:absolute;
+}
+.modulos
+{
+    position: absolute;
+    margin: 13%;
+    top: 235px;
+}
+.boton-marketing
+{
+    background-image: url("draw/Home/Boton-marketing.png");
+    background-size: cover;
+    height:170px;
+    width:163px;
+    position:absolute;
+
+}
+.boton-comercial
+{   
+    background-image: url("draw/Home/Boton-comercial.png");
+    background-size: cover;
+    height:170px;
+    width:163px;
+    position:absolute;
+    left: 160px;
+}
+.boton-finanzas
+{   
+    background-image: url("draw/Home/Boton-finanzas.png");
+    background-size: cover;
+    height:170px;
+    width:163px;
+    position:absolute;
+    left: 320px;
+}
+.boton-rrhh
+{   
+    background-image: url("draw/Home/Boton-rrhh.png");
+    background-size: cover;
+    height:170px;
+    width:163px;
+    position:absolute;
+    left: 480px;
+}
+.boton-procesos
+{   
+    background-image: url("draw/Home/Boton-procesos.png");
+    background-size: cover;
+    height:170px;
+    width:163px;
+    position:absolute;
+    left: 640px;
+}
+.boton-calidad
+{   
+    background-image: url("draw/Home/Boton-calidad.png");
+    background-size: cover;
+    height:170px;
+    width:163px;
+    position:absolute;
+    left: 800px;
+}
+.boton-legal
+{   
+    background-image: url("draw/Home/Boton-legal.png");
+    background-size: cover;
+    height:170px;
+    width:163px;
+    position:absolute;
+    left: 960px;
+}
+.imagen_tecforce
+{
+    margin: 33% auto;
+    background-size: cover;
+    position: absolute;
+    left: 80%;
+    top: 120px;
+    height:55px;
+    width:161px;
+    background-image: url('draw/Logo-Tecforce-Vectorizado-lindares.png');
+}
+.imagen_logo_CDC
+{
+    position: absolute;
+    top: 30px;
+    left: 3%;
+    width: 119px;
+    height: 117px;
+    background-image: url('draw/CDC/Logo-CDC-circulo-negro.png');
+    background-size: cover;
+}
+.imagen_atras
+{
+    position: absolute;
+    left: 90%;
+    width: 31px;
+    height: 28px;
+    flex-shrink: 0;
+    background-image: url('draw/Home/boton-salir.png');
+    background-size: cover;
+}
+.parrafo_central
+{   
+    font-size: 22px;
+    position: absolute;
+    left: 22%;
+    top: 175px;
+}

@@ -1,0 +1,488 @@
+[
+  {
+    "Codigo": 1001,
+    "Línea": "RES",
+    "Productos": "Cadera",
+    "Costo": 25162.6402,
+    "Eficiencia": "NO",
+    "Precio": 33068.0433,
+    "IDPRD": 1
+  },
+  {
+    "Codigo": 1003,
+    "Línea": "RES",
+    "Productos": "Chatas De Res",
+    "Costo": 31386.8749,
+    "Eficiencia": "NO",
+    "Precio": 39248.4572,
+    "IDPRD": 2
+  },
+  {
+    "Codigo": 1007,
+    "Línea": "RES",
+    "Productos": "Cola",
+    "Costo": 18898.9276,
+    "Eficiencia": "NO",
+    "Precio": 29285.4089,
+    "IDPRD": 3
+  },
+  {
+    "Codigo": 1008,
+    "Línea": "RES",
+    "Productos": "Costilla De Res Especial",
+    "Costo": 19429.9766,
+    "Eficiencia": "NO",
+    "Precio": 35349.4733,
+    "IDPRD": 4
+  },
+  {
+    "Codigo": 1019,
+    "Línea": "RES",
+    "Productos": "Lomo Fino Limpio",
+    "Costo": 39970.9155,
+    "Eficiencia": "NO",
+    "Precio": 57263.944,
+    "IDPRD": 5
+  },
+  {
+    "Codigo": 1020,
+    "Línea": "RES",
+    "Productos": "Asar De Res",
+    "Costo": 16193.6128,
+    "Eficiencia": "SI",
+    "Precio": 20669.6134,
+    "IDPRD": 6
+  },
+  {
+    "Codigo": 1025,
+    "Línea": "RES",
+    "Productos": "Murillo",
+    "Costo": 19262.2549,
+    "Eficiencia": "NO",
+    "Precio": 34377.9617,
+    "IDPRD": 7
+  },
+  {
+    "Codigo": 1026,
+    "Línea": "RES",
+    "Productos": "Muchacho",
+    "Costo": 28000,
+    "Eficiencia": "NO",
+    "Precio": 43000,
+    "IDPRD": 8
+  },
+  {
+    "Codigo": 1029,
+    "Línea": "RES",
+    "Productos": "Punta De Anca",
+    "Costo": 31969.8113,
+    "Eficiencia": "NO",
+    "Precio": 41689.6029,
+    "IDPRD": 9
+  },
+  {
+    "Codigo": 1031,
+    "Línea": "RES",
+    "Productos": "Sobrebarriga Delgada",
+    "Costo": 21000,
+    "Eficiencia": "NO",
+    "Precio": 36593.0465,
+    "IDPRD": 10
+  },
+  {
+    "Codigo": 1032,
+    "Línea": "RES",
+    "Productos": "Bife Angosto Americano",
+    "Costo": 69558.0113,
+    "Eficiencia": "NO",
+    "Precio": 94957.0712,
+    "IDPRD": 11
+  },
+  {
+    "Codigo": 1032,
+    "Línea": "RES",
+    "Productos": "Bife Angosto Importado",
+    "Costo": 69558.0113,
+    "Eficiencia": "NO",
+    "Precio": 94957.0712,
+    "IDPRD": 12
+  },
+  {
+    "Codigo": 1036,
+    "Línea": "RES",
+    "Productos": "Cogote",
+    "Costo": 11651.2854,
+    "Eficiencia": "NO",
+    "Precio": 20000,
+    "IDPRD": 13
+  },
+  {
+    "Codigo": 1041,
+    "Línea": "RES",
+    "Productos": "Pecho",
+    "Costo": 22150.8893,
+    "Eficiencia": "NO",
+    "Precio": 34795.9809,
+    "IDPRD": 14
+  },
+  {
+    "Codigo": 1043,
+    "Línea": "RES",
+    "Productos": "Punta De Anca Importada",
+    "Costo": 76518,
+    "Eficiencia": "NO",
+    "Precio": 92903.6854,
+    "IDPRD": 15
+  },
+  {
+    "Codigo": 1045,
+    "Línea": "RES",
+    "Productos": "T-Bone",
+    "Costo": 34000,
+    "Eficiencia": "NO",
+    "Precio": 50446.8208,
+    "IDPRD": 16
+  },
+  {
+    "Codigo": 1046,
+    "Línea": "RES",
+    "Productos": "Tomahawk",
+    "Costo": 81706.58,
+    "Eficiencia": "NO",
+    "Precio": 118252.0833,
+    "IDPRD": 17
+  },
+  {
+    "Codigo": 1050,
+    "Línea": "RES",
+    "Productos": "Bife Ancho Importado Premium",
+    "Costo": 83400.21,
+    "Eficiencia": "NO",
+    "Precio": 104250.2625,
+    "IDPRD": 18
+  },
+  {
+    "Codigo": 2002,
+    "Línea": "CERDO",
+    "Productos": "Cabeza De Cerdo",
+    "Costo": 2970.99,
+    "Eficiencia": "NO",
+    "Precio": 3500,
+    "IDPRD": 19
+  },
+  {
+    "Codigo": 2005,
+    "Línea": "CERDO",
+    "Productos": "Chuleta Especial",
+    "Costo": 18170.8569,
+    "Eficiencia": "NO",
+    "Precio": 27594.5946,
+    "IDPRD": 20
+  },
+  {
+    "Codigo": 2007,
+    "Línea": "CERDO",
+    "Productos": "Coditos De Cerdo",
+    "Costo": 10000,
+    "Eficiencia": "NO",
+    "Precio": 18000,
+    "IDPRD": 21
+  },
+  {
+    "Codigo": 2008,
+    "Línea": "CERDO",
+    "Productos": "Costilla De Cerdo",
+    "Costo": 14274.3968,
+    "Eficiencia": "NO",
+    "Precio": 22931.1417,
+    "IDPRD": 22
+  },
+  {
+    "Codigo": 2011,
+    "Línea": "CERDO",
+    "Productos": "Empella",
+    "Costo": 14244.5563,
+    "Eficiencia": "NO",
+    "Precio": 17805.6953,
+    "IDPRD": 23
+  },
+  {
+    "Codigo": 2014,
+    "Línea": "CERDO",
+    "Productos": "Lomo De Cerdo",
+    "Costo": 16406.5227,
+    "Eficiencia": "SI",
+    "Precio": 19559.0618,
+    "IDPRD": 24
+  },
+  {
+    "Codigo": 2019,
+    "Línea": "CERDO",
+    "Productos": "Espinazo Corriente",
+    "Costo": 14100,
+    "Eficiencia": "NO",
+    "Precio": 17625,
+    "IDPRD": 25
+  },
+  {
+    "Codigo": 2020,
+    "Línea": "CERDO",
+    "Productos": "Pescaditos De Cerdo",
+    "Costo": 13479.82,
+    "Eficiencia": "NO",
+    "Precio": 33000,
+    "IDPRD": 26
+  },
+  {
+    "Codigo": 2021,
+    "Línea": "CERDO",
+    "Productos": "Pezuña De Cerdo",
+    "Costo": 8046.3703,
+    "Eficiencia": "NO",
+    "Precio": 10057.9629,
+    "IDPRD": 27
+  },
+  {
+    "Codigo": 2022,
+    "Línea": "CERDO",
+    "Productos": "Milanesa De Cerdo",
+    "Costo": 14769.4838,
+    "Eficiencia": "SI",
+    "Precio": 17494.7524,
+    "IDPRD": 28
+  },
+  {
+    "Codigo": 2027,
+    "Línea": "CERDO",
+    "Productos": "Tocino Especial",
+    "Costo": 13505.9645,
+    "Eficiencia": "SI",
+    "Precio": 17181.5874,
+    "IDPRD": 29
+  },
+  {
+    "Codigo": 2028,
+    "Línea": "CERDO",
+    "Productos": "Tocino Corriente",
+    "Costo": 14436.4007,
+    "Eficiencia": "NO",
+    "Precio": 18045.5009,
+    "IDPRD": 30
+  },
+  {
+    "Codigo": 2033,
+    "Línea": "CERDO",
+    "Productos": "Bondiola De Cerdo",
+    "Costo": 17500,
+    "Eficiencia": "NO",
+    "Precio": 27096.4058,
+    "IDPRD": 31
+  },
+  {
+    "Codigo": 2035,
+    "Línea": "CERDO",
+    "Productos": "Despalme Cerdo",
+    "Costo": 14287.7819,
+    "Eficiencia": "NO",
+    "Precio": 17859.7273,
+    "IDPRD": 32
+  },
+  {
+    "Codigo": 2053,
+    "Línea": "CERDO",
+    "Productos": "Hueso C",
+    "Costo": 424.43,
+    "Eficiencia": "NO",
+    "Precio": 500,
+    "IDPRD": 33
+  },
+  {
+    "Codigo": 3000,
+    "Línea": "OTROS",
+    "Productos": "Alas De Pollo",
+    "Costo": 9600,
+    "Eficiencia": "NO",
+    "Precio": 19244.8641,
+    "IDPRD": 34
+  },
+  {
+    "Codigo": 3002,
+    "Línea": "OTROS",
+    "Productos": "Colombina De Alas De Pollo",
+    "Costo": 11000,
+    "Eficiencia": "NO",
+    "Precio": 25000,
+    "IDPRD": 35
+  },
+  {
+    "Codigo": 3010,
+    "Línea": "OTROS",
+    "Productos": "Corazones Y Mollejas",
+    "Costo": 9000,
+    "Eficiencia": "NO",
+    "Precio": 16000,
+    "IDPRD": 36
+  },
+  {
+    "Codigo": 3011,
+    "Línea": "OTROS",
+    "Productos": "Pechuga Entera Canasto",
+    "Costo": 13800,
+    "Eficiencia": "NO",
+    "Precio": 22564.8171,
+    "IDPRD": 37
+  },
+  {
+    "Codigo": 3012,
+    "Línea": "OTROS",
+    "Productos": "Pierna Pernil",
+    "Costo": 10400,
+    "Eficiencia": "NO",
+    "Precio": 19784.4556,
+    "IDPRD": 38
+  },
+  {
+    "Codigo": 3013,
+    "Línea": "OTROS",
+    "Productos": "Pollo Entero",
+    "Costo": 10400,
+    "Eficiencia": "NO",
+    "Precio": 19000,
+    "IDPRD": 39
+  },
+  {
+    "Codigo": 7004,
+    "Línea": "CERDO",
+    "Productos": "Mota Cerdo",
+    "Costo": 14331.0953,
+    "Eficiencia": "NO",
+    "Precio": 17197.3143,
+    "IDPRD": 40
+  },
+  {
+    "Codigo": 73359503,
+    "Línea": "CERDO",
+    "Productos": "Desposte De Cerdos",
+    "Costo": 17000,
+    "Eficiencia": "NO",
+    "Precio": 20400,
+    "IDPRD": 41
+  },
+  {
+    "Codigo": 733596,
+    "Línea": "RES",
+    "Productos": "Desposte Res",
+    "Costo": 37000,
+    "Eficiencia": "NO",
+    "Precio": 44400,
+    "IDPRD": 42
+  },
+  {
+    "Codigo": 733597,
+    "Línea": "RES",
+    "Productos": "Sacrificio Res",
+    "Costo": 55333.3333,
+    "Eficiencia": "NO",
+    "Precio": 66400,
+    "IDPRD": 43
+  },
+  {
+    "Codigo": 733598,
+    "Línea": "CERDO",
+    "Productos": "Sacrificio Cerdo",
+    "Costo": 10382.5058,
+    "Eficiencia": "NO",
+    "Precio": 12459.007,
+    "IDPRD": 44
+  },
+  {
+    "Codigo": 1004,
+    "Línea": "RES",
+    "Productos": "PNC",
+    "Costo": 500,
+    "Eficiencia": "NO",
+    "Precio": 625,
+    "IDPRD": 45
+  },
+  {
+    "Codigo": 1038,
+    "Línea": "RES",
+    "Productos": "TOMAHAWK ",
+    "Costo": 34000,
+    "Eficiencia": "NO",
+    "Precio": 50093.2106,
+    "IDPRD": 46
+  },
+  {
+    "Codigo": 2037,
+    "Línea": "CERDO",
+    "Productos": "RUSQUE LOMO",
+    "Costo": 5000,
+    "Eficiencia": "NO",
+    "Precio": 5000,
+    "IDPRD": 47
+  },
+  {
+    "Codigo": 5001,
+    "Línea": "OTROS",
+    "Productos": "MOLIDA MIXTA",
+    "Costo": 16834.6584,
+    "Eficiencia": "SI",
+    "Precio": 21043.323,
+    "IDPRD": 48
+  },
+  {
+    "Codigo": 7002,
+    "Línea": "RES",
+    "Productos": "MOLER RES",
+    "Costo": 17669.1795,
+    "Eficiencia": "SI",
+    "Precio": 21203.0154,
+    "IDPRD": 49
+  },
+  {
+    "Codigo": 1006,
+    "Línea": "RES",
+    "Productos": "Chuleton de Res",
+    "Costo": 28082.2642,
+    "Eficiencia": "NO",
+    "Precio": 33698.717,
+    "IDPRD": 50
+  },
+  {
+    "Codigo": 5003,
+    "Línea": "OTROS",
+    "Productos": "Mix de Cerdo",
+    "Costo": 14550.2896,
+    "Eficiencia": "NO",
+    "Precio": 18187.8619,
+    "IDPRD": 51
+  },
+  {
+    "Codigo": 1014,
+    "Línea": "RES",
+    "Productos": "Carne Molida",
+    "Costo": 17669.1795,
+    "Eficiencia": "SI",
+    "Precio": 17698.0628,
+    "IDPRD": 52
+  },
+  {
+    "Codigo": 2016,
+    "Línea": "CERDO",
+    "Productos": "Molida de Cerdo",
+    "Costo": 15169.0339,
+    "Eficiencia": "SI",
+    "Precio": 29500,
+    "IDPRD": 53
+  },
+  {
+    "Codigo": 7001,
+    "Línea": "RES",
+    "Productos": "Mota de RES",
+    "Costo": 9000,
+    "Eficiencia": "NO",
+    "Precio": 10800,
+    "IDPRD": 54
+  }
+]

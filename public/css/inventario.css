@@ -1,0 +1,13 @@
+body
+{
+    background-image: url("draw/CDC/inventario/Inventario-de-carnes.png");
+    background-size: cover;
+}
+.campos_entrada
+{
+    width: 700px;
+    margin: 0 auto;
+    margin-left: 24%;
+    color:#F0E51C;
+    font-size: 15px;
+}

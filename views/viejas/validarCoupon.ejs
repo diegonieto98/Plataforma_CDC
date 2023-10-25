@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validar cupon</title>
+    <link rel="Stylesheet" href="css/main.css" type="text/css">
+</head>
+<body>
+    <form style="text-align: center" action="./validarCoupon/vcoupon" method="POST">
+        <h1>Aqui puede validar su cupon</h1>
+        <br><br>Ingrese la ID del product_ID del bono que desea validar<br><br>
+        <input type="text" name="productid" id="productid">
+        <button> Validar Cupon </button><br><br><br>
+        <h3 style="text-align: center"><a href="http://localhost:3000/" class="nave-link" >Regresar a Inicio</a></h3>
+    </form>
+    <p>
+        Aqui abajo aparecera las horas en las que fueron creadas:
+        valid_since = <%= coupon[i].valid_since %><br>
+		valid_until = <%= coupon[i].valid_until %><br><br>
+    </p>
+    <script>
+        const productid = document.getElementById('productid');
+        productid.focus();
+    </script>
+</body>
+</html>
